@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const { logger } = require("./middleware/logEvent");
 
 const port = 8000;
 
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use("/");
+app.use("/", logger);
 
 app.listen(port, (err) => {
   if (err) {

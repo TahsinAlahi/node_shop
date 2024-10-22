@@ -5,14 +5,17 @@ const { format } = require("date-fns");
 
 async function logEvent(message, filename) {
   const logTime = format(new Date(), "dd/MM/yyyy\tHH:mm:ss");
-  const logMessage = `${logTime}\t ${message}`;
+  const logMessage = `${logTime} \t ${message}\n`;
 
-  if (!fs.existsSync(path(__dirname, "..", "log"))) {
-    fs.mkdirSync(path(__dirname, "..", "log"));
+  if (!fs.existsSync(path.join(__dirname, "..", "logs"))) {
+    fs.mkdirSync(path.join(__dirname, "..", "logs"));
   }
 
   try {
-    await fsPromise.appendFile(path(__dirname, "..", filename), logMessage);
+    await fsPromise.appendFile(
+      path.join(__dirname, "..", "logs", filename),
+      logMessage
+    );
   } catch (err) {
     console.log(err);
   }
