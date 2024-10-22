@@ -2,8 +2,11 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const { logger } = require("./middleware/logEvent");
+const path = require("path");
 
 const port = 8000;
+
+app.use(express.static(path.join(__dirname, "views")));
 
 // logger
 app.use(logger);
