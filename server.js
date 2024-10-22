@@ -11,6 +11,7 @@ app.use(logger);
 // body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use("/admin", require("./routes/admin"));
 app.use("/", require("./routes/root"));
 
 app.listen(port, (err) => {
