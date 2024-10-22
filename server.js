@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/admin", require("./routes/admin"));
 app.use("/", require("./routes/root"));
 
+app.use("*", require("./routes/404"));
+
 app.listen(port, (err) => {
   if (err) {
     console.log(err);
