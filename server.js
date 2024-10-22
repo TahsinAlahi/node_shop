@@ -1,9 +1,12 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 
 const port = 8000;
 
-app.use("/", (req, res, next) => {});
+app.use(bodyParser.urlencoded());
+
+app.use("/");
 
 app.listen(port, (err) => {
   if (err) {
