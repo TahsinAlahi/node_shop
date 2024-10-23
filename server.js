@@ -7,6 +7,8 @@ const rootDir = require("./util/rootDir");
 
 const port = 8000;
 
+app.set("view engine", "ejs");
+
 app.use(express.static(path.join(rootDir, "views")));
 app.use(express.static(path.join(rootDir, "public")));
 
@@ -17,6 +19,7 @@ app.use(logger);
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/admin", require("./routes/admin"));
+app.use("/user", require("./routes/user"));
 app.use("/", require("./routes/root"));
 
 app.use("*", require("./routes/404"));
