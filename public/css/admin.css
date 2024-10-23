@@ -1,0 +1,30 @@
+main {
+  margin: 0 2rem;
+  text-align: center;
+}
+
+main h3 {
+  margin-bottom: 2rem;
+  font-size: 1.7rem;
+}
+
+main form input {
+  padding: 0.5rem 1rem;
+  border: 2px solid #a1a1a1;
+  outline: none;
+  margin-right: 7px;
+  border-radius: 8px;
+}
+
+main form input:focus {
+  border: 2px solid #00695c;
+  /* border: 1px solid red; */
+}
+
+main form button {
+  height: 100%;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 1.5px solid #757575;
+  border-radius: 5px;
+}

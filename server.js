@@ -8,6 +8,7 @@ const rootDir = require("./util/rootDir");
 const port = 8000;
 
 app.use(express.static(path.join(rootDir, "views")));
+app.use(express.static(path.join(rootDir, "public")));
 
 // logger
 app.use(logger);
