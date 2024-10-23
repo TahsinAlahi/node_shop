@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
+const rootDir = require("../util/rootDir");
 
 router.route("/(.html)?").get((req, res, next) => {
-  res.sendFile(path.join(__dirname, "..", "views", "admin.html"));
+  res.sendFile(path.join(rootDir, "views", "admin.html"));
 });
 
 router.route("/add-product").post((req, res, next) => {
