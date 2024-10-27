@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const { logger } = require("./middleware/logEvent");
 const path = require("path");
 const rootDir = require("./util/rootDir");
+const { handle404 } = require("./controllers/404Controller");
 
 const port = 8000;
 
@@ -19,11 +20,11 @@ app.use(logger);
 // body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use("/admin", require("./routes/admin").router);
+app.use("/admin", require("./routes/admin"));
 app.use("/user", require("./routes/user"));
 app.use("/", require("./routes/root"));
 
-app.use("*", require("./routes/404"));
+app.use("*", handle404);
 
 app.listen(port, (err) => {
   if (err) {
