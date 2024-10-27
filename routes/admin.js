@@ -4,7 +4,6 @@ const path = require("path");
 const rootDir = require("../util/rootDir");
 
 router.route("/(.html)?").get((req, res, next) => {
-  // res.sendFile(path.join(rootDir, "views", "admin.html"));
   res.render("admin");
 });
 
