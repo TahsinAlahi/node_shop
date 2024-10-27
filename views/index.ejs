@@ -6,6 +6,7 @@
     <title>Node Shop</title>
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="/css/user.css" />
   </head>
   <body>
     <header>
@@ -24,6 +25,26 @@
     </header>
     <main>
       <h3>This is Node Shop <br />Welcome</h3>
+      <div class="products">
+        <%products.forEach(product => {%>
+        <div class="card product-item">
+          <h1 class="product__title"><%= product.title %></h1>
+          <div class="card__image">
+            <img
+              src="https://s26162.pcdn.co/wp-content/uploads/sites/2/2022/08/Books.jpg"
+              alt=""
+            />
+          </div>
+          <div class="product__content">
+            <h2 class="product__price">$5.99</h2>
+            <p class="product__description">Nice book Btw</p>
+          </div>
+          <div class="product__action">
+            <button class="btn">Add to cart</button>
+          </div>
+        </div>
+        <% }) %>
+      </div>
     </main>
   </body>
 </html>

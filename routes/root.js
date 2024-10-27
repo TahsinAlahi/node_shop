@@ -1,9 +1,8 @@
 const router = require("express").Router();
-const path = require("path");
-const rootDir = require("../util/rootDir");
+const { products } = require("../routes/admin");
 
 router.route("^/$|^/index(.html)?").get((req, res, next) => {
-  res.sendFile(path.join(rootDir, "views", "index.html"));
+  res.render("index", { products });
 });
 
 module.exports = router;
