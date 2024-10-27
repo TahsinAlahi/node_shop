@@ -9,20 +9,7 @@
     <link rel="stylesheet" href="/css/user.css" />
   </head>
   <body>
-    <header>
-      <h1 class="header__title" onclick="location.href='/'">Node Shop</h1>
-      <nav>
-        <a class="nav__item" href="/"
-          ><li class="nav__item-list active">Home</li></a
-        >
-        <a class="nav__item" href="/admin"
-          ><li class="nav__item-list">Admin</li></a
-        >
-        <a class="nav__item" href="/user"
-          ><li class="nav__item-list">User</li></a
-        >
-      </nav>
-    </header>
+    <%- include('./layout/nav') %>
     <main>
       <h3>This is Node Shop <br />Welcome</h3>
       <div class="products">
