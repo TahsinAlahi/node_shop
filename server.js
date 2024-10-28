@@ -21,7 +21,7 @@ app.use(logger);
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/admin", require("./routes/admin"));
-app.use("/user", require("./routes/user"));
+app.use("/product-list", require("./routes/product-list"));
 app.use("/", require("./routes/root"));
 
 app.use("*", handle404);

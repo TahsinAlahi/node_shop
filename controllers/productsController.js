@@ -8,12 +8,12 @@ function postProduct(req, res, next) {
 }
 
 function adminGetProduct(req, res, next) {
-  res.render("admin", { path: "/admin" });
+  res.render("admin/add-product", { path: "/admin" });
 }
 
 async function getUserProducts(req, res, next) {
   const products = await Product.fetchAllProducts();
-  res.render("user", { products, path: "/user" });
+  res.render("shop/product-list", { products, path: "/product-list" });
 }
 
 async function getAllProducts(req, res, next) {
