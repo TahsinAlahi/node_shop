@@ -1,14 +1,13 @@
 const { Product } = require("../models/product");
 
 function postProduct(req, res, next) {
-  // products.push({ title: req.body.title });
   const product = new Product(req.body.title);
   product.save();
   res.redirect("/");
 }
 
 function adminGetProduct(req, res, next) {
-  res.render("admin/add-product", { path: "/admin" });
+  res.render("admin/add-product", { path: "/admin/add-product" });
 }
 
 async function getUserProducts(req, res, next) {
