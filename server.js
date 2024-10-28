@@ -11,7 +11,7 @@ const port = 8000;
 app.set("view engine", "ejs");
 app.set("views", "views");
 
-app.use(express.static(path.join(rootDir, "views")));
+// app.use(express.static(path.join(rootDir, "views")));
 app.use(express.static(path.join(rootDir, "public")));
 
 // logger
@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/admin", require("./routes/admin"));
 app.use("/product-list", require("./routes/product-list"));
+app.use("/cart", require("./routes/cart"));
 app.use("/", require("./routes/root"));
 
 app.use("*", handle404);
